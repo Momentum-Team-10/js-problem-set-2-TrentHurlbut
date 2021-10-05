@@ -6,17 +6,74 @@
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
 
+function remove(arr, rem) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === rem) {
+            arr.splice(arr.indexOf(rem), 1);
+        }
+    }
+    return arr;
+}
+
 // 2. Revisit your "remove" function. Make sure that it does not change the original
 // array but instead returns a new array.
+
+function remove(arr, rem) {
+    let newArr = [...arr];
+    for (let i = 0; i < arr.length; i++) {
+        if (newArr[i] === rem) {
+            newArr.splice(newArr.indexOf(rem), 1);
+        }
+    }
+    return newArr;
+}
 
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
 
+function sum(arr) {
+    if (arr.length === 0) {
+        return 0;
+    } else {
+        let answer = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            answer += arr[i];
+        }
+        return answer;
+    }
+}
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
 
+function average(arr) {
+    if (arr.length === 0) {
+        return undefined;
+    } else {
+        let sum = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum / arr.length;
+    }
+}
+
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
+
+function minimum(arr) {
+    if (arr === []) {
+        return undefined;
+    } else {
+        let standard = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] <= standard) {
+                standard = arr[i];
+            }
+        }
+
+        return standard;
+    }
+}
 
 // 6. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
@@ -41,6 +98,14 @@
 // Note 2: Selection sort can be implemented using one array. Read the explanation at
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
+
+function selectionSort(arr) {
+    let marker = 0;
+    let min = arr[0];
+    for (i = 0; i < arr.length; i++) {
+        for (j = marker; j < arr.length; j++) {}
+    }
+}
 
 // 7. Create a function called `textList` that takes an array and joins its elements
 // into a string separated by commas.
