@@ -127,3 +127,19 @@ function selectionSort(arr) {
 //
 // For example, `textList(['Cadence', 'Ordel', 'Marion'])` results in the string
 // `"Cadence,Ordel,Marion"`.
+
+function textList(arr) {
+    let strList = '';
+    if (arr.length === 0) {
+        return strList;
+    } else if (arr.length === 1) {
+        strList += arr[0];
+        return strList;
+    } else {
+        for (let i = 0; i < arr.length - 1; i++) {
+            strList += arr[i] + ',';
+        }
+        strList += arr[arr.length - 1];
+        return strList;
+    }
+}
