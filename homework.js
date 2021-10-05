@@ -100,10 +100,25 @@ function minimum(arr) {
 // to see how. This may make more sense to you.
 
 function selectionSort(arr) {
-    let marker = 0;
-    let min = arr[0];
-    for (i = 0; i < arr.length; i++) {
-        for (j = marker; j < arr.length; j++) {}
+    if (arr.length === 0) {
+        let base = [];
+        return base;
+    } else if (arr.length === 1) {
+        return arr;
+    } else {
+        let newArr = [];
+        let min = arr[0];
+        while (arr.length > 0) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] <= min) {
+                    min = arr[i];
+                }
+            }
+            newArr.push(min);
+            arr.splice(arr.indexOf(min), 1);
+            min = arr[0];
+        }
+        return newArr;
     }
 }
 
